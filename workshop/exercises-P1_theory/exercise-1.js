@@ -13,20 +13,24 @@ const duplicateString = (x) => {
 };
 
 const reverseString = (str) => {
-  const splitString = str.split(''); // var splitString = "hello".split("");
+  const splitString = str.split(""); // var splitString = "hello".split("");
   const reverseArray = splitString.reverse(); // var reverseArray = ["h", "e", "l", "l", "o"].reverse();
-  return reverseArray.join(''); // var joinArray = ["o", "l", "l", "e", "h"].join("");
+  return reverseArray.join(""); // var joinArray = ["o", "l", "l", "e", "h"].join("");
 };
 
 // Expand each of the following and get the result of the expression
 // 1-1
 square(decrement(square(decrement(3))));
 
+// ANSWER: if console logged answer shows 9
 // 1-2
 decrement(decrement(square(square(3))));
+// ANSWER: if console logged answer shows 79
 
 // 1-3
-duplicateString(reverseString('hello'));
+duplicateString(reverseString("hello"));
+// ANSWER: if console logged answer shows olleholleh
 
 // 1-4
-reverseString(duplicateString(duplicateString('foo')));
+reverseString(duplicateString(duplicateString("foo")));
+// ANSWER: if console logged answer shows oofoofoofoof
