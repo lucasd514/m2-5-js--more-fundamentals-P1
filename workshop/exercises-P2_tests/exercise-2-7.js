@@ -12,11 +12,31 @@
 // f(["foo", -1]) // ""
 
 function repeat(arr) {
-  // Your code here
+  if (typeof arr[0] !== "string") return undefined;
+  if (typeof arr[1] !== "number") return undefined;
+  if (arr[1] <= 0) return "";
+
+  let words = arr[0];
+  let count = arr[1];
+
+  let newWord = "";
+  for (i = 1; i <= count; i++) {
+    newWord = newWord + words;
+  }
+
+  console.log(newWord);
+  return newWord;
 }
 
 // We need 7 test cases.
 // Don't forget to test all of the question parameters
+expect(repeat(["daje", 2]), "dajedaje");
+expect(repeat(["forza", 3]), "forzaforzaforza");
+expect(repeat(["go", 2]), "gogo");
+expect(repeat(["daje", -9999]), "");
+expect(repeat([44444, 2]), undefined);
+expect(repeat(["daje", "roma"]), undefined);
+expect(repeat(["plop", 2]), "plopplop");
 
 /**
  * -------------------------------------------------------------------
@@ -25,7 +45,7 @@ function repeat(arr) {
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
     console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
