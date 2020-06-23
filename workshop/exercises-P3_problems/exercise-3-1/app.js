@@ -7,6 +7,7 @@
 // - write only one event listener
 // - use a switch statement
 const container = document.querySelector("#btn-list");
+container.backgroundColor = "yellow";
 
 function onClick(event) {
   const btnID = event.target.id;
